@@ -22,7 +22,7 @@ const Header = () => {
           <img
             className="header_logo"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/502px-Logo_of_YouTube_%282015-2017%29.svg.png"
-            alt="yt"
+            alt="asdasd"
           />
         </Link>
       </div>
