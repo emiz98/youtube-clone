@@ -1,3 +1,4 @@
+import { Avatar } from "@material-ui/core";
 import "./videoRow.scss";
 
 const VideoRow = ({
@@ -12,9 +13,9 @@ const VideoRow = ({
 }) => {
   return (
     <div className="videoRow">
-      <img src={thumbnail} alt="" />
+      <img src={thumbnail} className="videoRow_thumb" />
       <div className="videoRow_info">
-        <h4>{title}</h4>
+        <h3>{title}</h3>
         <p className="videoRow_headline">
           {channel} •
           <span className="videoRow_subs">
@@ -22,6 +23,10 @@ const VideoRow = ({
           </span>
           {views} views • {timestamp}
         </p>
+        <div className="videoRow_channel">
+          <Avatar src={image} className="video_avatar" />
+          <span>{channel}</span>
+        </div>
         <p className="videoRow_description">{description}</p>
       </div>
     </div>

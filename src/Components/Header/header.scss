@@ -18,18 +18,32 @@
     height: 25px;
     margin-left: 20px;
   }
+  .header_region {
+    color: rgb(114, 114, 114);
+    font-size: 12px;
+    position: absolute;
+    padding: 5px;
+    top: 15px;
+  }
 }
 
 .header_center {
   display: flex;
   align-items: center;
-  width: 40%;
-  border: 1px solid rgb(221, 221, 221);
 
-  > input {
-    flex: 1;
-    border: none;
+  .header_center_inner {
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(221, 221, 221);
+    padding: 4px;
+
+    > input {
+      flex: 1;
+      border: none;
+      width: 500px;
+    }
   }
+
   .header_search {
     width: 50px !important;
     background-color: #fbfbfb;
@@ -43,6 +57,9 @@
   align-items: center;
 
   .header_right_icon {
-    margin-right: 8px;
+    margin-right: 20px;
   }
+}
+.mic {
+  margin-left: 20px;
 }

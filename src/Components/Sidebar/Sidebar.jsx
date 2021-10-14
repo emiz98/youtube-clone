@@ -1,5 +1,6 @@
 import {
   ExpandMoreOutlined,
+  ExploreOutlined,
   FeedbackOutlined,
   FlagOutlined,
   HelpOutlineOutlined,
@@ -23,6 +24,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <SidebarRow selected Icon={Home} title="Home" />
+      <SidebarRow Icon={ExploreOutlined} title="Explore" />
       <SidebarRow Icon={Whatshot} title="Trending" />
       <SidebarRow Icon={Subscriptions} title="Subscription" />
       <hr />

@@ -13,21 +13,18 @@
       color: rgb(238, 0, 0);
       transition: 0.2s ease-in-out;
     }
-    > .sidebarRow_title {
-      font-weight: bold;
-    }
   }
 }
 
 .sidebarRow_icon {
   color: #606060;
-  font-size: large !important;
+  font-size: 25px !important;
 }
 .sidebarRow_title {
   flex: 1;
   margin-left: 20px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
 }
 .selected {
   background-color: rgb(211, 211, 211);
@@ -36,6 +33,6 @@
     color: rgb(238, 0, 0);
   }
   > .sidebarRow_title {
-    font-weight: bold;
+    font-weight: 750;
   }
 }
