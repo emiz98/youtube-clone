@@ -4,6 +4,8 @@ import Sidebar from "./Components/Sidebar/Sidebar";
 import Recommended from "./Components/Recommended/Recommended";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Search from "./Components/Search/Search";
+import SidebarCollapsed from "./Components/Sidebar/SidebarCollapsed/SidebarCollapsed";
+import Watch from "./Components/Watch/Watch";
 
 function App() {
   return (
@@ -14,13 +16,22 @@ function App() {
           <Route path="/" exact>
             <div className="app_page">
               <Sidebar />
+              <SidebarCollapsed />
               <Recommended />
             </div>
           </Route>
-          <Route path="/search/:searchTerm">
+          <Route path="/search/:searchQuery/">
             <div className="app_page">
               <Sidebar />
+              <SidebarCollapsed />
               <Search />
+            </div>
+          </Route>
+          <Route path="/watch/:id/">
+            <div className="app_page">
+              <Sidebar />
+              <SidebarCollapsed />
+              <Watch />
             </div>
           </Route>
         </Switch>

@@ -1,3 +1,80 @@
 .app_page {
   display: flex;
+  /* height: 100vh; */
+}
+
+.logo {
+  width: 90%;
+  max-width: 310px;
+  position: absolute;
+  z-index: 5;
+  top: 36%;
+  left: 48%;
+}
+
+.name {
+  margin: 0 0 0 2.25em;
+  font-size: 3rem;
+  z-index: 0;
+  color: black;
+  position: relative;
+}
+
+.name::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #f9f9f9;
+  animation: slide 1s ease-in-out 1.3s forwards;
+}
+
+.icon {
+  display: inline-block;
+  transform: scale(1.4);
+  position: relative;
+  z-index: 2;
+  left: 100px;
+  width: 100px;
+  top: 80px;
+  animation: zoom-out 500ms ease 0.5s forwards,
+    go-left 650ms ease 1.25s forwards;
+}
+
+.icon::before {
+  /* font-family: "Font Awesome 5 Brands";
+        content: "\f167"; */
+  position: absolute;
+  font-size: 5rem;
+  top: -15px;
+  left: 0;
+  /* color: red; */
+}
+
+.icon::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: white;
+  left: 28px;
+  top: 16px;
+  z-index: -1;
+}
+
+@keyframes slide {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes zoom-out {
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes go-left {
+  to {
+    left: 0;
+  }
 }

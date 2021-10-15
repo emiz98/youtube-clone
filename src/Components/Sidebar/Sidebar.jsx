@@ -45,6 +45,11 @@ const Sidebar = () => {
       <SidebarRow Icon={HelpOutlineOutlined} title="Help" />
       <SidebarRow Icon={FeedbackOutlined} title="Send feedback" />
       <hr />
+      <div className="sidebar_footer">
+        <p>About Press Copyright Contact us Creators Advertise Developers</p>
+        <p>Terms Privacy Policy & Safety How YouTube works Test new features</p>
+        <span>© 2021 Google LLC</span>
+      </div>
     </div>
   );
 };

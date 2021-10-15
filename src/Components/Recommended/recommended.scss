@@ -3,6 +3,8 @@
   background-color: #f9f9f9;
   padding: 40px 20px;
   padding-bottom: 0;
+  overflow-y: scroll;
+  height: 85vh;
 
   > .recommended_videos {
     display: flex;

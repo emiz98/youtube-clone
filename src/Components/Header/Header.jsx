@@ -10,14 +10,29 @@ import {
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./header.scss";
+import $ from "jquery";
 
 const Header = () => {
   const [inputSearch, setInputSearch] = useState("");
+  const [navbarToggle, setNavbarToggle] = useState(false);
 
+  const menuToggle = () => {
+    setNavbarToggle(!navbarToggle);
+    if (navbarToggle) {
+      $(".sidebar").css("display", "none");
+      $(".sidebarCollapsed").css("display", "initial");
+      $(".recommended").css("flex", "1");
+      $(".search").css("flex", "1");
+    }
+    if (!navbarToggle) {
+      $(".sidebar").css("display", "initial");
+      $(".sidebarCollapsed").css("display", "none");
+    }
+  };
   return (
     <div className="header">
       <div className="header_left">
-        <Menu />
+        <Menu onClick={menuToggle} />
         <Link to="/" style={{ textDecoration: "none" }}>
           <img
             className="header_logo"
