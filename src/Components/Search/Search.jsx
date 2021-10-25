@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import ChannelRow from "../ChannelRow/ChannelRow";
 import VideoRow from "../VideoRow/VideoRow";
 import $ from "jquery";
+import response from "./response";
 import "./search.scss";
 
 const Search = () => {
@@ -17,12 +18,15 @@ const Search = () => {
     window.scrollTo(0, 0);
     $("body").css("overflow-y", "hidden");
     $(".sidebar").css("display", "initial");
-    const req = axios
-      .get(`https://yt-emiz.herokuapp.com/yt/api/v1/multiple/${searchQuery}`)
-      .then((res) => {
-        setSearchResults(res.data);
-        setLoading(true);
-      });
+    setLoading(true);
+
+    // const req = axios
+    //   .get(``)
+    //   .then((res) => {
+    //     setSearchResults(res.data);
+    //     console.log(res.data);
+    //     setLoading(true);
+    //   });
   }, [searchQuery]);
 
   return (
@@ -43,32 +47,33 @@ const Search = () => {
             description="Hey guys, Thnx for watching this gaming mix in 8D Audio. Hope you enjoyed it. If you love our 8D mix then subscribe our channel and press bell🔔 icon."
           />
           <hr />
-          {searchResults.map((searchResult) => (
+          {response.map((responseData) => (
             <Link
-              to={`/watch/${searchResult.id}`}
+              key={responseData.id}
+              to={`/watch/${responseData.id}`}
               style={{ textDecoration: "none" }}
             >
               <VideoRow
-                title={searchResult.title}
-                views={searchResult.viewCount}
+                title={responseData.title}
+                views={responseData.viewCount}
                 subs="1.5M"
-                duration={new Date(searchResult.duration * 1000)
+                duration={new Date(responseData.duration * 1000)
                   .toISOString()
                   .substr(14, 5)}
-                timestamp={searchResult.uploadDate}
-                live={searchResult.isLive}
-                image={searchResult.channel.thumbnails[0].url}
-                thumbnail={searchResult.thumbnails[0].url}
-                channel={searchResult.channel.name}
-                description={searchResult.description}
+                timestamp={responseData.uploadDate}
+                live={responseData.isLive}
+                image={responseData.channel.thumbnails[0].url}
+                thumbnail={responseData.thumbnails[0].url}
+                channel={responseData.channel.name}
+                description={responseData.description}
               />
             </Link>
           ))}
         </>
       ) : (
-        <div class="logo">
-          <img class="icon" src="/yt.png" alt="" />
-          <h1 class="name">YouTube</h1>
+        <div className="logo">
+          <img className="icon" src="/yt.png" alt="" />
+          <h1 className="name">YouTube</h1>
         </div>
       )}
     </div>

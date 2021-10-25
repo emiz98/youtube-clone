@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import RelatedVideos from "../RelatedVideos/RelatedVideos";
 import axios from "axios";
 import { useState } from "react";
+import responses from "./responses";
 
 const Watch = () => {
   const { id } = useParams();
@@ -16,13 +17,13 @@ const Watch = () => {
     $("body").css("overflow-y", "scroll");
     $(".sidebar").css("display", "none");
     $(".sidebarCollapsed").css("display", "none");
-
-    const req = axios
-      .get(`https://yt-emiz.herokuapp.com/yt/api/v1/target/${id}`)
-      .then((res) => {
-        setVideoDetails(res.data);
-        setLoading(true);
-      });
+    setLoading(true);
+    // const req = axios
+    //   .get(``)
+    //   .then((res) => {
+    //     setVideoDetails(res.data);
+    //     setLoading(true);
+    //   });
   }, [id]);
 
   return (
@@ -31,19 +32,19 @@ const Watch = () => {
         <>
           <div className="watch_col1">
             <div className="watchVideo">
-              <WatchVideo video={videoDetails} />
+              <WatchVideo video={responses} />
             </div>
           </div>
           <div className="watch_col2">
-            {videoDetails?.related?.map((relatedVideo) => (
-              <RelatedVideos video={relatedVideo} />
+            {responses?.related?.map((relatedVideo) => (
+              <RelatedVideos key={relatedVideo.id} video={relatedVideo} />
             ))}
           </div>
         </>
       ) : (
-        <div class="logo">
-          <img class="icon" src="/yt.png" alt="" />
-          <h1 class="name">YouTube</h1>
+        <div className="logo">
+          <img className="icon" src="/yt.png" alt="" />
+          <h1 className="name">YouTube</h1>
         </div>
       )}
       {/* Comments */}
