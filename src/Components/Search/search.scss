@@ -27,3 +27,16 @@
     text-transform: uppercase;
   }
 }
+
+@media screen and(max-width:1200px) {
+}
+@media screen and(max-width:768px) {
+  .search {
+    flex: 1 !important;
+    padding: 5px !important;
+  }
+}
+@media screen and(max-width:480px) {
+}
+@media screen and(max-width:320px) {
+}
