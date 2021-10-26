@@ -16,7 +16,7 @@
   .header_logo {
     object-fit: contain;
     height: 25px;
-    margin-left: 35px;
+    margin-left: 20px;
   }
   .header_region {
     color: rgb(114, 114, 114);
@@ -67,4 +67,8 @@
 }
 .mic {
   margin-left: 20px;
+}
+
+.navbar_burger:hover {
+  cursor: pointer;
 }

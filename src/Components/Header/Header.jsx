@@ -1,4 +1,4 @@
-import { Avatar } from "@material-ui/core";
+import { Avatar, IconButton } from "@material-ui/core";
 import {
   Apps,
   Menu,
@@ -23,16 +23,21 @@ const Header = () => {
       $(".sidebarCollapsed").css("display", "initial");
       $(".recommended").css("flex", "1");
       $(".search").css("flex", "1");
+      $(".video").css("width", "335px");
     }
     if (!navbarToggle) {
       $(".sidebar").css("display", "initial");
       $(".sidebarCollapsed").css("display", "none");
+      $(".video").css("width", "298px");
     }
   };
   return (
     <div className="header">
       <div className="header_left">
-        <Menu onClick={menuToggle} />
+        <IconButton onClick={menuToggle}>
+          <Menu className="navbar_burger" />
+        </IconButton>
+
         <Link to="/" style={{ textDecoration: "none" }}>
           <img
             className="header_logo"
