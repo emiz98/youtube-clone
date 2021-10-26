@@ -52,3 +52,21 @@
     background: #acacac;
   }
 }
+
+@media screen and(max-width:1200px) {
+}
+@media screen and(max-width:768px) {
+  .sidebar {
+    display: none !important;
+  }
+}
+@media screen and(max-width:480px) {
+  .sidebar {
+    display: none !important;
+  }
+}
+@media screen and(max-width:320px) {
+  .sidebar {
+    display: none !important;
+  }
+}
