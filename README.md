@@ -7,6 +7,8 @@ YouTube is an American online video sharing and social media platform headquarte
 
 <br/>
 
+![Cover](https://cdn.sanity.io/images/1z5g6za5/production/28f94d9ccfb283757763bfd335d66e3aabfe1760-1912x1080.png?w=2000&fit=max&auto=format)
+
 ## Description
 This build was inspired by Youtube web application. The frontend of the app was build using React JS.
 
